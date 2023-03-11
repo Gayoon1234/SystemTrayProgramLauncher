@@ -1,0 +1,17 @@
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\bin\Debug\net6.0-windows\SystemTrayProgramLauncher.exe
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\bin\Debug\net6.0-windows\SystemTrayProgramLauncher.deps.json
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\bin\Debug\net6.0-windows\SystemTrayProgramLauncher.runtimeconfig.json
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\bin\Debug\net6.0-windows\SystemTrayProgramLauncher.dll
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\bin\Debug\net6.0-windows\SystemTrayProgramLauncher.pdb
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.csproj.AssemblyReference.cache
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.Form1.resources
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.csproj.GenerateResource.cache
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.GeneratedMSBuildEditorConfig.editorconfig
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.AssemblyInfoInputs.cache
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.AssemblyInfo.cs
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.csproj.CoreCompileInputs.cache
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.dll
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\refint\SystemTrayProgramLauncher.dll
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.pdb
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.genruntimeconfig.cache
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\ref\SystemTrayProgramLauncher.dll
