@@ -36,9 +36,7 @@
             this.single2ExtendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extend2SingleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.oneDriveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.test2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -62,11 +60,9 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.option1ToolStripMenuItem,
             this.toolStripSeparator1,
-            this.oneDriveToolStripMenuItem,
-            this.test1ToolStripMenuItem,
-            this.test2ToolStripMenuItem});
+            this.test1ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(124, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 54);
             // 
             // option1ToolStripMenuItem
             // 
@@ -74,7 +70,7 @@
             this.single2ExtendToolStripMenuItem,
             this.extend2SingleToolStripMenuItem});
             this.option1ToolStripMenuItem.Name = "option1ToolStripMenuItem";
-            this.option1ToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.option1ToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.option1ToolStripMenuItem.Text = "Display";
             // 
             // single2ExtendToolStripMenuItem
@@ -94,26 +90,14 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
-            // 
-            // oneDriveToolStripMenuItem
-            // 
-            this.oneDriveToolStripMenuItem.Name = "oneDriveToolStripMenuItem";
-            this.oneDriveToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.oneDriveToolStripMenuItem.Text = "OneDrive";
-            this.oneDriveToolStripMenuItem.Click += new System.EventHandler(this.oneDriveToolStripMenuItem_Click);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(148, 6);
             // 
             // test1ToolStripMenuItem
             // 
             this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
-            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.test1ToolStripMenuItem.Text = "Test1";
-            // 
-            // test2ToolStripMenuItem
-            // 
-            this.test2ToolStripMenuItem.Name = "test2ToolStripMenuItem";
-            this.test2ToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.test2ToolStripMenuItem.Text = "Test2";
+            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.test1ToolStripMenuItem.Text = "Refresh Scripts";
+            this.test1ToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -193,9 +177,7 @@
         private ToolStripMenuItem single2ExtendToolStripMenuItem;
         private ToolStripMenuItem extend2SingleToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripMenuItem oneDriveToolStripMenuItem;
         private ToolStripMenuItem test1ToolStripMenuItem;
-        private ToolStripMenuItem test2ToolStripMenuItem;
         private PictureBox pictureBox1;
         private Label label1;
         private PictureBox pictureBox2;

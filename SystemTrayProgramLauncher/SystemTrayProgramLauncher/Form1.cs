@@ -1,15 +1,21 @@
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
+using SystemTrayProgramLauncher.CustomFileReader;
 
 namespace SystemTrayProgramLauncher
 {
     public partial class main : Form
     {
+        private readonly FileReader fr;
         public main()
         {
             InitializeComponent();
+            fr = new FileReader();
+            refreshMenu();
         }
 
+        // Loads the application within the System Tray
         private void Form1_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -47,32 +53,58 @@ namespace SystemTrayProgramLauncher
             Process.Start(displayswitchPath, "/internal");
         }
 
-        //This will only work on my PC.
-        private void oneDriveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string scriptPath = @"C:\Users\gayan\OneDrive - RMIT University\2023\Notes\word2pdf.ps1";
-            ProcessStartInfo psi = new ProcessStartInfo()
-            {
-                FileName = "powershell.exe",
-                Arguments = $"-File \"{scriptPath}\"",
-                CreateNoWindow = true,
-                UseShellExecute = false,
-            };
-            Process.Start(psi);
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        private void RefreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            refreshMenu();
+        }
+        private void default_MenuItem_Click(object sender, EventArgs e, string path)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo()
+            {
+                FileName = "powershell.exe",
+                Arguments = $"-File \"{path}\"",
+                CreateNoWindow = true,
+                UseShellExecute = false,
+            };
+            Process.Start(psi);
+        }
+        private void refreshMenu() {
+            var paths = fr.ReadEnvFile();
+            foreach (var kvp in paths)
+            {
+                var title = kvp.Key;
+                var path = kvp.Value;
+                if (title == "Seperator" && path == "Seperator") {
+                    ToolStripItem seperator = new ToolStripSeparator();
+                    contextMenuStrip1.Items.Add(seperator);
+                }
+                else
+                {
+                    bool itemExists = false;
+                    foreach (ToolStripItem item in contextMenuStrip1.Items)
+                    {
+                        if (item.Text == title)
+                        {
+                            // Item already exists in contextMenuStrip1.Items
+                            itemExists = true;
+                            break;
+                        }
+                    }
 
-        //Code for later
-
-        //Basically the plan is to allow users to create custom Context menu items/
-
-        //ToolStripMenuItem newItem = new ToolStripMenuItem("New Menu Item");
-        //newItem.Click += new EventHandler(newItem_Click);
-        //contextMenuStrip1.Items.Add(newItem);
+                    if (!itemExists)
+                    {
+                        // Create new ToolStripMenuItem and add to contextMenuStrip1.Items
+                        ToolStripMenuItem newItem = new ToolStripMenuItem($"{title}");
+                        newItem.Click += (s, ev) => default_MenuItem_Click(s, ev, path);
+                        contextMenuStrip1.Items.Add(newItem);
+                    }
+                }
+            }
+        }
     }
 }
