@@ -58,6 +58,13 @@ namespace SystemTrayProgramLauncher
             Application.Exit();
         }
 
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+            this.ShowInTaskbar = false;
+            notifyIcon.Visible = true;
+        }
+
         private void RefreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             refreshMenu();
@@ -106,5 +113,7 @@ namespace SystemTrayProgramLauncher
                 }
             }
         }
+
+       
     }
 }
