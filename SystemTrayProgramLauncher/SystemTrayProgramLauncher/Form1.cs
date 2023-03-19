@@ -2,16 +2,19 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using SystemTrayProgramLauncher.CustomFileReader;
+using SystemTrayProgramLauncher.Utilities;
 
 namespace SystemTrayProgramLauncher
 {
     public partial class main : Form
     {
         private readonly FileReader fr;
+        private readonly PowerShellIntegration psi;
         public main()
         {
             InitializeComponent();
             fr = new FileReader();
+            psi = new PowerShellIntegration();
             refreshMenu();
         }
 
@@ -23,6 +26,7 @@ namespace SystemTrayProgramLauncher
             notifyIcon.Visible = true;
         }
 
+        // When the user double clicks on the system tray icon, open form
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
@@ -30,6 +34,7 @@ namespace SystemTrayProgramLauncher
             notifyIcon.Visible = false;
         }
 
+        // When the user right clicks, show context menu
         private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -80,7 +85,18 @@ namespace SystemTrayProgramLauncher
             };
             Process.Start(psi);
         }
+
+        public void removeNonDefaultOptions() {
+            var length = contextMenuStrip1.Items.Count;
+            for (var i = length - 1; i > 2; i--)
+            {
+                contextMenuStrip1.Items.RemoveAt(i);
+            }
+        }
         private void refreshMenu() {
+            removeNonDefaultOptions();
+            
+
             var paths = fr.ReadEnvFile();
             foreach (var kvp in paths)
             {
