@@ -46,16 +46,12 @@ namespace SystemTrayProgramLauncher
         //FYI, DisplaySwitch.exe is included in the bin file as MS messed up the WIN11 implementation of it.
         private void single2ExtendToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string baseDirectory = AppContext.BaseDirectory;
-            string displayswitchPath = Path.Combine(baseDirectory, "Scripts", "DisplaySwitch.exe");
-            Process.Start(displayswitchPath, "/extend");
+            psi.displaySwitchExtend();
         }
 
         private void extend2SingleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string baseDirectory = AppContext.BaseDirectory;
-            string displayswitchPath = Path.Combine(baseDirectory, "Scripts", "DisplaySwitch.exe");
-            Process.Start(displayswitchPath, "/internal");
+            psi.displaySwitchSingle();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -76,14 +72,7 @@ namespace SystemTrayProgramLauncher
         }
         private void default_MenuItem_Click(object sender, EventArgs e, string path)
         {
-            ProcessStartInfo psi = new ProcessStartInfo()
-            {
-                FileName = "powershell.exe",
-                Arguments = $"-File \"{path}\"",
-                CreateNoWindow = true,
-                UseShellExecute = false,
-            };
-            Process.Start(psi);
+           psi.runPowershellFromPath(path);
         }
 
         public void removeNonDefaultOptions() {
@@ -94,8 +83,8 @@ namespace SystemTrayProgramLauncher
             }
         }
         private void refreshMenu() {
+
             removeNonDefaultOptions();
-            
 
             var paths = fr.ReadEnvFile();
             foreach (var kvp in paths)
@@ -108,24 +97,10 @@ namespace SystemTrayProgramLauncher
                 }
                 else
                 {
-                    bool itemExists = false;
-                    foreach (ToolStripItem item in contextMenuStrip1.Items)
-                    {
-                        if (item.Text == title)
-                        {
-                            // Item already exists in contextMenuStrip1.Items
-                            itemExists = true;
-                            break;
-                        }
-                    }
-
-                    if (!itemExists)
-                    {
-                        // Create new ToolStripMenuItem and add to contextMenuStrip1.Items
-                        ToolStripMenuItem newItem = new ToolStripMenuItem($"{title}");
-                        newItem.Click += (s, ev) => default_MenuItem_Click(s, ev, path);
-                        contextMenuStrip1.Items.Add(newItem);
-                    }
+                    // Create new ToolStripMenuItem and add to contextMenuStrip1.Items
+                    ToolStripMenuItem newItem = new ToolStripMenuItem($"{title}");
+                    newItem.Click += (s, ev) => default_MenuItem_Click(s, ev, path);
+                    contextMenuStrip1.Items.Add(newItem);
                 }
             }
         }
