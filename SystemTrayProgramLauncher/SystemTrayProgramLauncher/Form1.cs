@@ -10,6 +10,7 @@ namespace SystemTrayProgramLauncher
     {
         private readonly FileReader fr;
         private readonly PowerShellIntegration psi;
+        private Dictionary<string, string> contextMenuItems;
         public main()
         {
             InitializeComponent();
@@ -86,14 +87,20 @@ namespace SystemTrayProgramLauncher
 
             removeNonDefaultOptions();
 
-            var paths = fr.ReadEnvFile();
-            foreach (var kvp in paths)
+            var contextMenuItems = fr.ReadEnvFile();
+            foreach (var kvp in contextMenuItems)
             {
                 var title = kvp.Key;
                 var path = kvp.Value;
                 if (title == "Seperator" && path == "Seperator") {
                     ToolStripItem seperator = new ToolStripSeparator();
                     contextMenuStrip1.Items.Add(seperator);
+                }
+                else if (title[0] == '!') {
+                    ToolStripMenuItem parentItem = (ToolStripMenuItem)contextMenuStrip1.Items[contextMenuStrip1.Items.Count - 1];
+                    ToolStripMenuItem newItem = new ToolStripMenuItem($"{title[1..]}");
+                    newItem.Click += (s, ev) => default_MenuItem_Click(s, ev, path);
+                    parentItem.DropDownItems.Add(newItem);
                 }
                 else
                 {

@@ -21,9 +21,12 @@ namespace SystemTrayProgramLauncher.CustomFileReader
                 foreach (var line in lines)
                 {
                     var parts = line.Split(new[] { "###" }, StringSplitOptions.RemoveEmptyEntries);
-                    if (parts.Length == 2)
+                    if (parts.Length >= 2)
                     {
                         envData[parts[0]] = parts[1];
+                    }
+                    else if(parts.Length == 1) { 
+                        envData[parts[0]] = String.Empty;
                     }
                 }
             }
