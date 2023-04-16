@@ -3,6 +3,8 @@ using System.IO;
 using System.Windows.Forms;
 using SystemTrayProgramLauncher.CustomFileReader;
 using SystemTrayProgramLauncher.Utilities;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace SystemTrayProgramLauncher
 {
@@ -17,6 +19,9 @@ namespace SystemTrayProgramLauncher
             fr = new FileReader();
             psi = new PowerShellIntegration();
             refreshMenu();
+            cbSelection.DataSource = new BindingSource(contextMenuItems, null);
+            cbSelection.DisplayMember = "Key";
+            cbSelection.ValueMember = "Key";
         }
 
         // Loads the application within the System Tray
@@ -83,11 +88,11 @@ namespace SystemTrayProgramLauncher
                 contextMenuStrip1.Items.RemoveAt(i);
             }
         }
-        private void refreshMenu() {
+        private void refreshMenu(bool useFile=true) {
 
             removeNonDefaultOptions();
 
-            var contextMenuItems = fr.ReadEnvFile();
+            contextMenuItems = useFile ? fr.ReadEnvFile():contextMenuItems;
             foreach (var kvp in contextMenuItems)
             {
                 var title = kvp.Key;
@@ -112,6 +117,19 @@ namespace SystemTrayProgramLauncher
             }
         }
 
-       
+        private void cbSelection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sender is ComboBox comboBox && comboBox.SelectedItem != null)
+            {
+                object valueMember = comboBox.SelectedValue;
+
+                if (valueMember is string selectedValue)
+                {
+                    tbName.Text = selectedValue;
+                    tbPath.Text = contextMenuItems[selectedValue];
+                }
+
+            }
+        }s
     }
 }
