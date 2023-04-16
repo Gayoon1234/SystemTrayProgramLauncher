@@ -49,6 +49,8 @@
             this.tbPath = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -172,9 +174,9 @@
             // cbSelection
             // 
             this.cbSelection.FormattingEnabled = true;
-            this.cbSelection.Location = new System.Drawing.Point(47, 87);
+            this.cbSelection.Location = new System.Drawing.Point(21, 37);
             this.cbSelection.Name = "cbSelection";
-            this.cbSelection.Size = new System.Drawing.Size(121, 25);
+            this.cbSelection.Size = new System.Drawing.Size(144, 25);
             this.cbSelection.TabIndex = 6;
             this.cbSelection.SelectedIndexChanged += new System.EventHandler(this.cbSelection_SelectedIndexChanged);
             // 
@@ -182,19 +184,21 @@
             // 
             this.gb1.Controls.Add(this.label3);
             this.gb1.Controls.Add(this.label2);
+            this.gb1.Controls.Add(this.btnSave);
+            this.gb1.Controls.Add(this.cbSelection);
             this.gb1.Controls.Add(this.tbPath);
             this.gb1.Controls.Add(this.tbName);
-            this.gb1.Location = new System.Drawing.Point(47, 120);
+            this.gb1.Location = new System.Drawing.Point(34, 169);
             this.gb1.Name = "gb1";
-            this.gb1.Size = new System.Drawing.Size(717, 126);
+            this.gb1.Size = new System.Drawing.Size(730, 169);
             this.gb1.TabIndex = 7;
             this.gb1.TabStop = false;
-            this.gb1.Text = "Properties";
+            this.gb1.Text = "Modify Existing";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(199, 40);
+            this.label3.Location = new System.Drawing.Point(199, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 17);
             this.label3.TabIndex = 9;
@@ -203,7 +207,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 40);
+            this.label2.Location = new System.Drawing.Point(21, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 17);
             this.label2.TabIndex = 1;
@@ -211,31 +215,60 @@
             // 
             // tbPath
             // 
-            this.tbPath.Location = new System.Drawing.Point(199, 60);
+            this.tbPath.Location = new System.Drawing.Point(199, 91);
             this.tbPath.Name = "tbPath";
             this.tbPath.Size = new System.Drawing.Size(502, 24);
             this.tbPath.TabIndex = 8;
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(21, 60);
+            this.tbName.Location = new System.Drawing.Point(21, 91);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(144, 24);
             this.tbName.TabIndex = 0;
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnSave.BackColor = System.Drawing.Color.SkyBlue;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSave.Location = new System.Drawing.Point(691, 261);
+            this.btnSave.Location = new System.Drawing.Point(635, 127);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(57, 26);
+            this.btnSave.Size = new System.Drawing.Size(66, 26);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRefresh.Location = new System.Drawing.Point(34, 69);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(66, 43);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "Manual Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(119, 69);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(66, 43);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Add New";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // main
             // 
@@ -243,9 +276,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(800, 371);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.gb1);
-            this.Controls.Add(this.cbSelection);
             this.Controls.Add(this.btnMin);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pictureBox1);
@@ -289,5 +322,7 @@
         private TextBox tbPath;
         private TextBox tbName;
         private Button btnSave;
+        private Button btnRefresh;
+        private Button button1;
     }
 }

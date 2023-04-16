@@ -19,9 +19,6 @@ namespace SystemTrayProgramLauncher
             fr = new FileReader();
             psi = new PowerShellIntegration();
             refreshMenu();
-            cbSelection.DataSource = new BindingSource(contextMenuItems, null);
-            cbSelection.DisplayMember = "Key";
-            cbSelection.ValueMember = "Key";
         }
 
         // Loads the application within the System Tray
@@ -115,6 +112,14 @@ namespace SystemTrayProgramLauncher
                     contextMenuStrip1.Items.Add(newItem);
                 }
             }
+
+            refreshComboBox();
+        }
+
+        private void refreshComboBox() {
+            cbSelection.DataSource = new BindingSource(contextMenuItems, null);
+            cbSelection.DisplayMember = "Key";
+            cbSelection.ValueMember = "Key";
         }
 
         private void cbSelection_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,6 +135,11 @@ namespace SystemTrayProgramLauncher
                 }
 
             }
-        }s
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            refreshMenu();
+        }
     }
 }
