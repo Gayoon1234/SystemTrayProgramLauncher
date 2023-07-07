@@ -16,3 +16,4 @@ F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLaunc
 F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\ref\SystemTrayProgramLauncher.dll
 F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.main.resources
 F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.Properties.Resources.resources
+F:\Data\Me\Code\SystemTrayLocal\SystemTrayProgramLauncher\SystemTrayProgramLauncher\SystemTrayProgramLauncher\obj\Debug\net6.0-windows\SystemTrayProgramLauncher.Form2.resources

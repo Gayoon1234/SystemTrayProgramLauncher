@@ -13,6 +13,7 @@ namespace SystemTrayProgramLauncher
         private readonly FileReader fr;
         private readonly PowerShellIntegration psi;
         private Dictionary<string, string> contextMenuItems;
+        private Form f2 = new Form2();
         public main()
         {
             InitializeComponent();
@@ -140,6 +141,16 @@ namespace SystemTrayProgramLauncher
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             refreshMenu();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            f2.Show();
         }
     }
 }

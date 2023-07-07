@@ -46,11 +46,11 @@
             this.gb1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tbPath = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -188,7 +188,8 @@
             this.gb1.Controls.Add(this.cbSelection);
             this.gb1.Controls.Add(this.tbPath);
             this.gb1.Controls.Add(this.tbName);
-            this.gb1.Location = new System.Drawing.Point(34, 169);
+            this.gb1.ForeColor = System.Drawing.Color.White;
+            this.gb1.Location = new System.Drawing.Point(34, 131);
             this.gb1.Name = "gb1";
             this.gb1.Size = new System.Drawing.Size(730, 169);
             this.gb1.TabIndex = 7;
@@ -213,20 +214,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Name";
             // 
-            // tbPath
-            // 
-            this.tbPath.Location = new System.Drawing.Point(199, 91);
-            this.tbPath.Name = "tbPath";
-            this.tbPath.Size = new System.Drawing.Size(502, 24);
-            this.tbPath.TabIndex = 8;
-            // 
-            // tbName
-            // 
-            this.tbName.Location = new System.Drawing.Point(21, 91);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(144, 24);
-            this.tbName.TabIndex = 0;
-            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.SkyBlue;
@@ -240,6 +227,21 @@
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // tbPath
+            // 
+            this.tbPath.Location = new System.Drawing.Point(199, 91);
+            this.tbPath.Name = "tbPath";
+            this.tbPath.Size = new System.Drawing.Size(502, 24);
+            this.tbPath.TabIndex = 8;
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(21, 91);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(144, 24);
+            this.tbName.TabIndex = 0;
             // 
             // btnRefresh
             // 
@@ -256,27 +258,28 @@
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // button1
+            // btnAddNew
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(119, 69);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 43);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Add New";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAddNew.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddNew.FlatAppearance.BorderSize = 0;
+            this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNew.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddNew.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddNew.Location = new System.Drawing.Point(119, 69);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(66, 43);
+            this.btnAddNew.TabIndex = 10;
+            this.btnAddNew.Text = "Add New";
+            this.btnAddNew.UseVisualStyleBackColor = false;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(800, 371);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.MediumBlue;
+            this.ClientSize = new System.Drawing.Size(800, 319);
+            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.gb1);
             this.Controls.Add(this.btnMin);
@@ -323,6 +326,6 @@
         private TextBox tbName;
         private Button btnSave;
         private Button btnRefresh;
-        private Button button1;
+        private Button btnAddNew;
     }
 }
